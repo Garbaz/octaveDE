@@ -177,17 +177,17 @@ r = name(a,b,c) % Das Resultat wird der Variable r zugewiesen
 ####Logik
 
 ```octave
-a == b	% Gleich
-a ~= b	% Ungleich
+a == b  % Gleich
+a ~= b  % Ungleich
 
-a > b	% Größer
-a >= b	% Größer/Gleich
-a < b	% Kleiner
-a <= b	% Kleiner/Gleich
+a > b   % Größer
+a >= b  % Größer/Gleich
+a < b   % Kleiner
+a <= b  % Kleiner/Gleich
 
-e & f	% Und
-e | f	% Oder
-~ e	% Nicht
+e & f   % Und
+e | f   % Oder
+~ e     % Nicht
 ```
 
 ####Programm-Fluss
