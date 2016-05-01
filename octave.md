@@ -7,7 +7,7 @@
 ####Ausgabe
 
 ```octave
-Befehl %Gibt das Resultat aus
+Befehl  % Gibt das Resultat aus
 %z.B.
 >> 1+2
 ans =  3
@@ -26,7 +26,9 @@ help Befehl                % Gibt Informationen zu Befehl
 clear [Variable]           % Löscht Variable (Oder alles wenn keine Variable angegeben)
 who                        % Gibt Informationen über aktuelle Variablen & Funktionen (auch `whos`)
 format long/short          % Ändert das Format (Anzahl der Fließkommastellen)
-save Dateiname [Variable]  % Speichert den aktuellen Zustand (Variablen, Funktionen, etc.) oder eine bestimmte Variable als Datei
+
+save Dateiname [Variable]  % Speichert den aktuellen Zustand (Variablen, Funktionen, etc.)
+                           %   oder eine bestimmte Variable als Datei
 load Dateiname             % Lädt einen Zustand aus einer Datei
 more on/off                % Aktiviert / Deaktiviert seitenweise Ausgabe
 ```
@@ -41,10 +43,13 @@ a = Ausdruck                    % Weist der Variable a einen Wert zu
 [a00, a01, a02; a10, a11, a12]  % Definiert eine Matrix (Im Beispiel 2 Zeilen à 3 Werten)
 
 n:m                             % Generiert eine Liste ganzer Zahlen von n bis m (inklusive)
-n:r:m                           % Generiert eine Liste von Zahlen mit Abstand r von n bis m (z.B. 0:0.2:1 -> [0, 0.2, 0.4, 0.6, 0.8, 1])
-linspace(n,m)                   % Generiert eine Liste linear, gleichmäßig verteilter Zahlen von n bis m (Zum plotten geeignet).
+n:r:m                           % Generiert eine Liste von Zahlen mit Abstand r von n bis m
+                                %   (z.B. 0:0.2:1 -> [0, 0.2, 0.4, 0.6, 0.8, 1])
+linspace(n,m)                   % Generiert eine Liste linear, gleichmäßig verteilter Zahlen von n bis m
 
-a(n)                            % Gibt ntes Element von Liste zurück (auch a(n:m) -> Element n bis Element m)
+a(n)                            % Gibt ntes Element von Liste zurück (auch a(n:m) -> Elemente n bis m)
+a'                              % Gibt die Transponierte von a.
+                                %   (Aus Spalten werden Zeilen und anders herum)
 ```
 
 ###Rechenoperatoren
@@ -101,8 +106,10 @@ ans     % Das Ergebnis der vorherigen Operation (Nicht wirklich eine Konstante)
 ###Graphen zeichnen ("Plotten")
 
 ```octave
-plot(x,y)                % Zeichnet einen Graph zweier Listen (x->y), wobei x die Wertemenge bildet und y die Funktionswerte.
-plot(x,y,Optionen)       % Wie plot(x,y), jedoch kann man unterschiedliche Optionen zum Zeichnen des Graphen angeben. (z.B. plot(x,y,'b--') -> Graph ist Blau & Gestrichelt)
+plot(x,y)                % Zeichnet einen Graph zweier Listen (x->y),
+                         %   wobei x die Wertemenge bildet und y die Funktionswerte.
+plot(x,y,Optionen)       % Wie plot(x,y), jedoch mit Optionen wie der Graph gezeichnet wird.
+                         %   (z.B. plot(x,y,'b--') -> Graph ist Blau & Gestrichelt)
 plot(x0,y0,o0,x1,y1,o1)  % Zeichnet mehrere Graphen in einem Bild
 
 title(Titel)             % Setzt den Titel, welcher über dem Graphen steht
@@ -161,7 +168,10 @@ end
 
 Aufruf einer Funktion:
 ```octave
-name(a,b,c)
+name(a,b,c)     % Ruft die Funktion name mit den Parametern a, b und c auf
+                %   und gibt das Resultat zurück (Variable "ans").
+
+r = name(a,b,c) % Das Resultat wird der Variable r zugewiesen
 ```
 
 ####Logik
@@ -185,11 +195,11 @@ e | f	% Oder
 #####Bedingung ("If")
 
 ```octave
-if e
+if e      % Wenn e wahr ist
 
-elseif f
+elseif f  % Wenn e nicht wahr ist, jedoch f
 
-else
+else      % Wenn keine der Bedingungen wahr ist
 
 end
 ```
@@ -198,11 +208,11 @@ end
 
 ```octave
 switch a
-case a0,
+case a0,    % Fall "a == a0"
 
-case a1,
+case a1,    % Fall "a == a1"
 
-otherwise,
+otherwise,  % Falls keine der Fälle zutrifft
 
 end
 ```
@@ -210,7 +220,8 @@ end
 #####Schleifen ("For", "While")
 
 ```octave
-for a = Liste % Läuft durch alle Elemente der Liste und führt gegebene Operationen mit {a = aktuelles Element} aus.
+for a = Liste % Läuft durch alle Elemente der Liste
+              %   und führt gegebene Operationen mit {a = aktuelles Element} aus.
 
 end
 ```
