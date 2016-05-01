@@ -22,34 +22,34 @@ Befehl; % Gibt das Resultat nicht aus
 ####Befehle
 
 ```octave
-help Befehl                % Gibt Informationen zu Befehl
-clear [Variable]           % Löscht Variable (Oder alles wenn keine Variable angegeben)
-who                        % Gibt Informationen über aktuelle Variablen & Funktionen (auch `whos`)
-format long/short          % Ändert das Format (Anzahl der Fließkommastellen)
+help Befehl               % Gibt Informationen zu Befehl
+clear [Variable]          % Löscht Variable (Oder alles wenn keine Variable angegeben)
+who                       % Gibt Informationen über aktuelle Variablen & Funktionen (auch `whos`)
+format long/short         % Ändert das Format (Anzahl der Fließkommastellen)
 
-save Dateiname [Variable]  % Speichert den aktuellen Zustand (Variablen, Funktionen, etc.)
-                           %   oder eine bestimmte Variable als Datei
-load Dateiname             % Lädt einen Zustand aus einer Datei
-more on/off                % Aktiviert / Deaktiviert seitenweise Ausgabe
+save Dateiname [Variable] % Speichert den aktuellen Zustand (Variablen, Funktionen, etc.)
+                          %   oder eine bestimmte Variable als Datei
+load Dateiname            % Lädt einen Zustand aus einer Datei
+more on/off               % Aktiviert / Deaktiviert seitenweise Ausgabe
 ```
 
 ####Variablen & Listen
 
 ```octave
-a = Ausdruck                    % Weist der Variable a einen Wert zu
+a = Ausdruck                   % Weist der Variable a einen Wert zu
 
-[a0, a1, a2]                    % Definiert eine Liste (auch [a0 a1 a2])
-[a0; a1; a2]                    % Definiert einen Vektor
-[a00, a01, a02; a10, a11, a12]  % Definiert eine Matrix (Im Beispiel 2 Zeilen à 3 Werten)
+[a0, a1, a2]                   % Definiert eine Liste (auch [a0 a1 a2])
+[a0; a1; a2]                   % Definiert einen Vektor
+[a00, a01, a02; a10, a11, a12] % Definiert eine Matrix (Im Beispiel 2 Zeilen à 3 Werten)
 
-n:m                             % Generiert eine Liste ganzer Zahlen von n bis m (inklusive)
-n:r:m                           % Generiert eine Liste von Zahlen mit Abstand r von n bis m
-                                %   (z.B. 0:0.2:1 -> [0, 0.2, 0.4, 0.6, 0.8, 1])
-linspace(n,m)                   % Generiert eine Liste linear, gleichmäßig verteilter Zahlen von n bis m
+n:m                            % Generiert eine Liste ganzer Zahlen von n bis m (inklusive)
+n:r:m                          % Generiert eine Liste von Zahlen mit Abstand r von n bis m
+                               %   (z.B. 0:0.2:1 -> [0, 0.2, 0.4, 0.6, 0.8, 1])
+linspace(n,m)                  % Generiert eine Liste linear, gleichmäßig verteilter Zahlen von n bis m
 
-a(n)                            % Gibt ntes Element von Liste zurück (auch a(n:m) -> Elemente n bis m)
-a'                              % Gibt die Transponierte von a.
-                                %   (Aus Spalten werden Zeilen und anders herum)
+a(n)                           % Gibt ntes Element von Liste zurück (auch a(n:m) -> Elemente n bis m)
+a'                             % Gibt die Transponierte von a.
+                               %   (Aus Spalten werden Zeilen und anders herum)
 ```
 
 ###Rechenoperatoren
@@ -106,32 +106,32 @@ ans     % Das Ergebnis der vorherigen Operation (Nicht wirklich eine Konstante)
 ###Graphen zeichnen ("Plotten")
 
 ```octave
-plot(x,y)                % Zeichnet einen Graph zweier Listen (x->y),
-                         %   wobei x die Wertemenge bildet und y die Funktionswerte.
-plot(x,y,Optionen)       % Wie plot(x,y), jedoch mit Optionen wie der Graph gezeichnet wird.
-                         %   (z.B. plot(x,y,'b--') -> Graph ist Blau & Gestrichelt)
-plot(x0,y0,o0,x1,y1,o1)  % Zeichnet mehrere Graphen in einem Bild
+plot(x,y)               % Zeichnet einen Graph zweier Listen (x->y),
+                        %   wobei x die Wertemenge bildet und y die Funktionswerte.
+plot(x,y,Optionen)      % Wie plot(x,y), jedoch mit Optionen wie der Graph gezeichnet wird.
+                        %   (z.B. plot(x,y,'b--') -> Graph ist Blau & Gestrichelt)
+plot(x0,y0,o0,x1,y1,o1) % Zeichnet mehrere Graphen in einem Fenster
 
-title(Titel)             % Setzt den Titel, welcher über dem Graphen steht
-xlabel(Label)            % Setzt den Namen der an der x-Achse steht
-ylabel(Label)            % Setzt den Namen der an der y-Achse steht
-legend(Name0, Name1)     % Gibt eine Legende zu den einzelnen Graphen an
-axis(v)                  % Setzt die Skalierung der x-/y-Achsen manuell (v = [x_min, x_max, y_min, y_max])
+title(Titel)            % Setzt den Titel, welcher über dem Graphen steht
+xlabel(Label)           % Setzt den Namen der an der x-Achse steht
+ylabel(Label)           % Setzt den Namen der an der y-Achse steht
+legend(Name0, Name1)    % Gibt eine Legende zu den einzelnen Graphen an
+axis(v)                 % Setzt die Skalierung der x-/y-Achsen manuell (v = [x_min, x_max, y_min, y_max])
 
-figure                   % Der nächste plot() Befehl wird in einem neuen Fenster angezeigt
-figure(n)                % Der nächste plot() Befehl wird im nten, bereits existierenden, Fenster angezeigt
+figure                  % Der nächste plot() Befehl wird in einem neuen Fenster angezeigt
+figure(n)               % Der nächste plot() Befehl wird im nten, bereits existierenden, Fenster angezeigt
 
-print(Dateiname,Format)  % Speichert den aktuellen Plot als Datei (Für PNG Bild: Format = '-dpng')
+print(Dateiname,Format) % Speichert den aktuellen Plot als Datei (Für PNG Bild: Format = '-dpng')
 ```
 
 ###Scripte
 
 ```octave
-edit            % Startet / Wechselt zu einem Editor
-Name            % Führt einen Script mit Dateiname "Name.m" aus, welcher im aktuellen Verzeichnis liegt.
+edit    % Startet / Wechselt zu einem Editor
+Name    % Führt einen Script mit Dateiname "Name.m" aus, welcher im aktuellen Verzeichnis liegt.
 
-cd Pfad         % Wechselt den den aktuellen Pfad (Pfad = .. -> Einen Ordner zurück)
-pwd             % Gibt aktuelles Verzeichnis aus
+cd Pfad % Wechselt den den aktuellen Pfad (Pfad = .. -> Einen Ordner zurück)
+pwd     % Gibt aktuelles Verzeichnis aus
 ```
 
 *Das erste Kommentar in einer Script-Datei wird ausgegeben wenn man* `help Name` *eingibt.*
@@ -227,7 +227,8 @@ end
 ```
 
 ```octave
-while e % Solang die Logische Bedingung e erfüllt ist, werden gegebene Operationen ausgeführt
+while e % Solang die Logische Bedingung e erfüllt ist
+        %   werden gegebene Operationen ausgeführt
 
 end
 ```
