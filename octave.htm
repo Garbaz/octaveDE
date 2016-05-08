@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+</head>
+<body>
+<div class="figure">
+<img src="logo.png" title="Octave" alt="" />
+
+</div>
+<h1 id="octave-befehls-referenz">Octave Befehls Referenz</h1>
+<p>https://github.com/Garbaz/octaveDE/blob/master/octave.md</p>
+<h2 id="grundlagen">Grundlagen</h2>
+<h3 id="syntax">Syntax</h3>
+<h4 id="ausgabe">Ausgabe</h4>
+<div class="sourceCode"><pre class="sourceCode octave"><code class="sourceCode octave">Befehl  <span class="co">% Gibt das Resultat aus</span>
+<span class="co">%z.B.</span>
+&gt;&gt; <span class="fl">1</span>+<span class="fl">2</span>
+<span class="bn">ans</span> =  <span class="fl">3</span>
+&gt;&gt;
+
+Befehl; <span class="co">% Gibt das Resultat nicht aus</span>
+<span class="co">% z.B.</span>
+&gt;&gt; a = <span class="fl">1</span>+<span class="fl">2</span>;
+&gt;&gt;</code></pre></div>
+<h4 id="befehle">Befehle</h4>
+<div class="sourceCode"><pre class="sourceCode octave"><code class="sourceCode octave"><span class="fu">help</span> Befehl               <span class="co">% Gibt Informationen zu Befehl</span>
+
+<span class="fu">clear</span> [Variable]          <span class="co">% Loescht Variable</span>
+                          <span class="co">%   (Oder alles wenn keine Variable angegeben)</span>
+
+<span class="fu">who</span>                       <span class="co">% Gibt Informationen ueber aktuelle Variablen </span>
+                          <span class="co">%   &amp; Funktionen (auch `whos`)</span>
+
+<span class="fu">format</span> long/short         <span class="co">% Aendert das Format (Anzahl der Fliesskommastellen)</span>
+
+<span class="fu">save</span> Dateiname [V0 V1 ...]<span class="co">% Speichert den aktuellen Zustand (Variablen&amp;Funktionen)</span>
+                          <span class="co">%   oder bestimmte Variablen/Funktionen als Datei</span>
+
+<span class="fu">load</span> Dateiname            <span class="co">% Laedt einen Zustand aus einer Datei</span>
+
+<span class="fu">more</span> on/off               <span class="co">% Aktiviert / Deaktiviert seitenweise Ausgabe</span></code></pre></div>
+<h4 id="variablen-listen">Variablen &amp; Listen</h4>
+<div class="sourceCode"><pre class="sourceCode octave"><code class="sourceCode octave">a = Ausdruck                   <span class="co">% Weist der Variable a einen Wert zu</span>
+
+[a0, a1, a2]                   <span class="co">% Definiert eine Liste (auch [a0 a1 a2])</span>
+
+[a0; a1; a2]                   <span class="co">% Definiert einen Vektor</span>
+
+[a00, a01, a02; a10, a11, a12] <span class="co">% Definiert eine Matrix</span>
+                               <span class="co">%   (Im Beispiel 2 Zeilen a 3 Werten)</span>
+
+n:m                            <span class="co">% Generiert eine Liste ganzer Zahlen von n bis m</span>
+
+n:r:m                          <span class="co">% Generiert eine Liste von Zahlen</span>
+                               <span class="co">%   mit Abstand r von n bis m</span>
+                               <span class="co">%   (z.B. 0:0.2:1 -&gt; [0, 0.2, 0.4, 0.6, 0.8, 1])</span>
+
+<span class="fu">linspace</span>(n,m)                  <span class="co">% Generiert eine Liste linear, gleichmaessig</span>
+                               <span class="co">%   verteilter Zahlen von n bis m</span>
+
+a(n)                           <span class="co">% Gibt ntes Element von Liste zurueck</span>
+                               <span class="co">%   (auch a(n:m) -&gt; Elemente n bis m)</span>
+
+a&#39;                             <span class="co">% Gibt die Transponierte von a.</span>
+                               <span class="co">%   (Aus Spalten werden Zeilen und anders herum)</span></code></pre></div>
+<h3 id="rechenoperatoren">Rechenoperatoren</h3>
+<h4 id="grundrechenarten-matrix-arithmetik">Grundrechenarten / Matrix-Arithmetik</h4>
+<div class="sourceCode"><pre class="sourceCode octave"><code class="sourceCode octave">a+b  <span class="co">% Addition</span>
+a-b  <span class="co">% Subtraktion</span>
+a*b  <span class="co">% Multiplikation</span>
+a/b  <span class="co">% Division</span>
+a^b  <span class="co">% &quot;a hoch b&quot;</span></code></pre></div>
+<p>a &amp; b koennen Konstanten, Variablen, Vektoren oder Matrizen sein. Fuer elementweise Verrechnung von Matrizen muss ein Punkt vor den Operator gesetzt werden.</p>
+<p>z.B.:</p>
+<div class="sourceCode"><pre class="sourceCode octave"><code class="sourceCode octave">a.*b</code></pre></div>
+<h4 id="integrierte-funktionen">Integrierte Funktionen</h4>
+<div class="sourceCode"><pre class="sourceCode octave"><code class="sourceCode octave"><span class="fu">sqrt</span>(a)       <span class="co">% Quadratwurzel (&quot;√&quot;)</span>
+<span class="fu">nthroot</span>(a,n)  <span class="co">% nte Wurzel</span>
+
+<span class="fu">exp</span>(a)        <span class="co">% Exponential Funktion (&quot;e hoch a&quot;)</span>
+<span class="fu">log</span>(a)        <span class="co">% Natuerlicher Logarithmus</span>
+<span class="fu">log10</span>(a)      <span class="co">% Logarithmus zur Basis 10</span>
+
+<span class="fu">sin</span>(a)        <span class="co">% Sinus Funktion (auch cos, tan, cot, csc &amp; sec)</span>
+<span class="fu">asin</span>(a)       <span class="co">% Gegenfunktion von Sinus (auch acos, atan, acot, acsc &amp; asec)</span>
+
+<span class="fu">abs</span>(a)        <span class="co">% Betrag (z.B. abs(-7) = 7)</span>
+<span class="fu">sign</span>(a)       <span class="co">% Vorzeichen (z.B. sign(-7) = -1)</span>
+<span class="fu">round</span>(a)      <span class="co">% Zur naechsten ganzen Zahl runden</span>
+<span class="fu">floor</span>(a)      <span class="co">% Abrunden</span>
+<span class="fu">ceil</span>(a)       <span class="co">% Aufrunden</span>
+
+<span class="fu">mod</span>(a,b)      <span class="co">% Modulo (&quot;a mod b&quot;)</span></code></pre></div>
+<h4 id="integrierte-konstanten">Integrierte Konstanten</h4>
+<div class="sourceCode"><pre class="sourceCode octave"><code class="sourceCode octave"><span class="bn">pi</span>      <span class="co">% Die Kreiszahl Pi (3.14159 ...)</span>
+<span class="bn">e</span>       <span class="co">% Eulersche Konstante (2.71828 ...)</span>
+<span class="bn">i</span>       <span class="co">% Komplexe Identitaet (√-1)</span>
+<span class="bn">Inf</span>     <span class="co">% Unendlich (∞)</span>
+
+<span class="bn">ans</span>     <span class="co">% Das Ergebnis der vorherigen Operation (Nicht wirklich eine Konstante)</span></code></pre></div>
+<h3 id="graphen-zeichnen-plotten">Graphen zeichnen (&quot;Plotten&quot;)</h3>
+<div class="sourceCode"><pre class="sourceCode octave"><code class="sourceCode octave"><span class="fu">plot</span>(x,y)               <span class="co">% Zeichnet einen Graph zweier Listen (x-&gt;y),</span>
+                        <span class="co">%   wobei x die Wertemenge bildet und y die Funktionswerte</span>
+
+<span class="fu">plot</span>(x,y,Optionen)      <span class="co">% Wie plot(x,y), jedoch mit Optionen</span>
+                        <span class="co">%   wie der Graph gezeichnet wird.</span>
+                        <span class="co">%   (z.B. plot(x,y,&#39;b--&#39;) -&gt; Graph ist Blau &amp; Gestrichelt)</span>
+
+<span class="fu">plot</span>(x0,y0,o0,x1,y1,o1) <span class="co">% Zeichnet mehrere Graphen in einem Fenster</span>
+
+<span class="fu">title</span>(Titel)            <span class="co">% Setzt den Titel, welcher ueber dem Graphen steht</span>
+<span class="fu">xlabel</span>(Label)           <span class="co">% Setzt den Namen der an der x-Achse steht</span>
+<span class="fu">ylabel</span>(Label)           <span class="co">% Setzt den Namen der an der y-Achse steht</span>
+
+<span class="fu">legend</span>(Name0, Name1)    <span class="co">% Gibt eine Legende zu den einzelnen Graphen an</span>
+
+<span class="fu">axis</span>(v)                 <span class="co">% Setzt die Skalierung der x-/y-Achsen manuell</span>
+                        <span class="co">%   (v = [x_min, x_max, y_min, y_max])</span>
+
+<span class="fu">figure</span>                  <span class="co">% Der naechste plot() Befehl wird</span>
+                        <span class="co">%   in einem neuen Fenster angezeigt</span>
+
+<span class="fu">figure</span>(n)               <span class="co">% Der naechste plot() Befehl wird</span>
+                        <span class="co">%   im nten, bereits existierenden, Fenster angezeigt</span>
+
+<span class="fu">print</span>(Dateiname,Format) <span class="co">% Speichert den aktuellen Plot als Datei</span>
+                        <span class="co">%   (Fuer PNG Bild: Format = &#39;-dpng&#39;)</span></code></pre></div>
+<h3 id="scripte">Scripte</h3>
+<div class="sourceCode"><pre class="sourceCode octave"><code class="sourceCode octave"><span class="fu">edit</span>    <span class="co">% Startet / Wechselt zu einem Editor</span>
+
+Name    <span class="co">% Fuehrt einen Script mit Dateiname &quot;Name.m&quot; aus,</span>
+        <span class="co">%   welcher im aktuellen Verzeichnis liegt.</span>
+
+<span class="fu">cd</span> Pfad <span class="co">% Wechselt den den aktuellen Pfad (cd .. -&gt; Einen Ordner zurueck)</span>
+
+<span class="fu">pwd</span>     <span class="co">% Gibt aktuelles Verzeichnis aus</span></code></pre></div>
+<p><em>Das erste Kommentar in einer Script-Datei wird ausgegeben wenn man</em> <code>help Name</code> <em>eingibt.</em></p>
+<h3 id="funktionen-logik-programm-fluss">Funktionen, Logik &amp; Programm-Fluss</h3>
+<h4 id="funktionen">Funktionen</h4>
+<p>Definition einer Funktion ohne Parameter:</p>
+<div class="sourceCode"><pre class="sourceCode octave"><code class="sourceCode octave">function name
+<span class="co">%Operationen</span>
+end</code></pre></div>
+<p>Definition einer Funktion mit Parametern:</p>
+<div class="sourceCode"><pre class="sourceCode octave"><code class="sourceCode octave">function name (param0, param1, param2)
+<span class="co">%Operationen</span>
+end</code></pre></div>
+<p>Definition einer Funktion mit Rueckgabewert(en):</p>
+<div class="sourceCode"><pre class="sourceCode octave"><code class="sourceCode octave"><span class="co">%Ein Rueckgabewert:</span>
+function c = name(a,b)
+<span class="co">%Operationen (z.B. c = a+b)</span>
+end
+
+<span class="co">%Mehrere Rueckgabewerte:</span>
+function [c,d,<span class="bn">e</span>] = name(a,b)
+<span class="co">%Operationen (z.B. c = a; d = b; e = 5)</span>
+end</code></pre></div>
+<p><em>Das erste Kommentar in einer Funktionszuweisung wird ausgegeben wenn man</em> <code>help name</code> <em>eingibt.</em></p>
+<p>Aufruf einer Funktion:</p>
+<div class="sourceCode"><pre class="sourceCode octave"><code class="sourceCode octave">name(a,b,c)     <span class="co">% Ruft die Funktion name mit den Parametern a, b und c auf</span>
+                <span class="co">%   und gibt das Resultat zurueck (Variable &quot;ans&quot;).</span>
+
+r = name(a,b,c) <span class="co">% Das Resultat wird der Variable r zugewiesen</span></code></pre></div>
+<h4 id="logik">Logik</h4>
+<div class="sourceCode"><pre class="sourceCode octave"><code class="sourceCode octave">a == b  <span class="co">% Gleich</span>
+a ~= b  <span class="co">% Ungleich</span>
+
+a &gt; b   <span class="co">% Groesser</span>
+a &gt;= b  <span class="co">% Groesser/Gleich</span>
+a &lt; b   <span class="co">% Kleiner</span>
+a &lt;= b  <span class="co">% Kleiner/Gleich</span>
+
+<span class="bn">e</span> &amp; f   <span class="co">% Und</span>
+<span class="bn">e</span> | f   <span class="co">% Oder</span>
+~ <span class="bn">e</span>     <span class="co">% Nicht</span></code></pre></div>
+<h4 id="programm-fluss">Programm-Fluss</h4>
+<h5 id="bedingung-if">Bedingung (&quot;If&quot;)</h5>
+<div class="sourceCode"><pre class="sourceCode octave"><code class="sourceCode octave">if <span class="bn">e</span>      <span class="co">% Wenn e wahr ist</span>
+
+elseif f  <span class="co">% Wenn e nicht wahr ist, jedoch f</span>
+
+else      <span class="co">% Wenn keine der Bedingungen wahr ist</span>
+
+end</code></pre></div>
+<h5 id="fallunterscheidung-switch">Fallunterscheidung (&quot;Switch&quot;)</h5>
+<div class="sourceCode"><pre class="sourceCode octave"><code class="sourceCode octave">switch a
+case a0,    <span class="co">% Fall &quot;a == a0&quot;</span>
+
+case a1,    <span class="co">% Fall &quot;a == a1&quot;</span>
+
+otherwise,  <span class="co">% Falls keine der Faelle zutrifft</span>
+
+end</code></pre></div>
+<h5 id="schleifen-for-while">Schleifen (&quot;For&quot;, &quot;While&quot;)</h5>
+<div class="sourceCode"><pre class="sourceCode octave"><code class="sourceCode octave">for a = Liste <span class="co">% Laeuft durch alle Elemente der Liste</span>
+              <span class="co">%   und fuehrt gegebene Operationen mit {a = aktuelles Element} aus.</span>
+
+end</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode octave"><code class="sourceCode octave">while <span class="bn">e</span> <span class="co">% Solang die Logische Bedingung e erfuellt ist</span>
+        <span class="co">%   werden gegebene Operationen ausgefuehrt</span>
+
+end</code></pre></div>
+</body>
+</html>
