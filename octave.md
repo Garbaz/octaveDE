@@ -34,8 +34,8 @@ who                       % Gibt Informationen über aktuelle Variablen
 
 format long/short         % Ändert das Format (Anzahl der Fließkommastellen)
 
-save Dateiname [Variable] % Speichert den aktuellen Zustand (Variablen&Funktionen)
-                          %   oder eine bestimmte Variable als Datei
+save Dateiname [V0 V1 ...]% Speichert den aktuellen Zustand (Variablen&Funktionen)
+                          %   oder bestimmte Variablen/Funktionen als Datei
 
 load Dateiname            % Lädt einen Zustand aus einer Datei
 
@@ -100,7 +100,7 @@ log(a)        % Natürlicher Logarithmus
 log10(a)      % Logarithmus zur Basis 10
 
 sin(a)        % Sinus Funktion (auch cos, tan, cot, csc & sec)
-asin(a)       % Gegenfunktion von Sinus (auch acos, atan, acot, acsc & sec)
+asin(a)       % Gegenfunktion von Sinus (auch acos, atan, acot, acsc & asec)
 
 abs(a)        % Betrag (z.B. abs(-7) = 7)
 sign(a)       % Vorzeichen (z.B. sign(-7) = -1)
