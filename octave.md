@@ -1,6 +1,4 @@
-![](logo.png "Octave")
-
-#Octave Befehls Referenz
+#![](logo_small.png "Octave") Octave Befehls Referenz
 
 https://github.com/Garbaz/octaveDE/blob/master/octave.md
 
